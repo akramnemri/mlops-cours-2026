@@ -1,5 +1,16 @@
 # Cours MLOps — repo du cours (2026)
 
+## Organisation du binôme
+
+Option A (repo commun) : https://github.com/akramnemri/mlops-cours-2026
+
+- Binôme : @akramnemri (propriétaire du repo) et Khalil Kacem (collaborateur) ; l'enseignant
+  (`firaskhl`) est collaborateur.
+- Khalil est indisponible depuis le 2026-11-17 : @akramnemri pilote les labs et relit lui-même
+  les PR (commentaire d'auto-relecture sur chaque PR) jusqu'à son retour.
+- Dataset : german-credit (fil rouge du cours).
+- Environnement : WSL2 Ubuntu 24.04 + Docker Desktop (au lieu de la VM Vagrant).
+
 Repo de travail du cours **Machine Learning Operations** (18 h : 9 séances de 2 h, cycle ingénieur
 informatique).
 Vous le copiez au Lab 0 et vous y travaillez **jusqu'à la soutenance** : chaque lab y ajoute
