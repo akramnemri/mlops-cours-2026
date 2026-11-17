@@ -9,29 +9,29 @@ Mode d'emploi (à garder en tête du fichier) :
   le pré-contrôle de rendu (make check-m10) compte les entrées datées.
 - Liez les PR, issues et ADR (#12, docs/adr/0003-...). Les problèmes non résolus restent
   visibles : c'est précisément ce qui aide l'enseignant à vous débloquer.
-- L'entrée d'exemple ci-dessous (date AAAA-MM-JJ) n'est pas comptée ; supprimez-la
-  quand vous aurez écrit la vôtre.
 -->
 
-**Binôme :** [À compléter : @pseudo-github-1 (Prénom Nom), @pseudo-github-2 (Prénom Nom)]
-**Repo :** [À compléter : https://github.com/VOTRE_USER/mlops-cours-2026]
-**Dataset :** [À compléter : german-credit (fil rouge) ou nom du dataset validé + lien de l'issue]
-**Extensions :** [À compléter au plus tard en fin de S5 : @pseudo-1 → ext/<nom> · @pseudo-2 → ext/<nom>]
+**Binôme :** @akramnemri · Khalil Kacem (collaborateur du repo, indisponible depuis le 2026-11-17)
+**Repo :** https://github.com/akramnemri/mlops-cours-2026
+**Dataset :** german-credit (fil rouge, `dataset.yaml` du cours, non modifié)
+**Extensions :** à déclarer au plus tard en fin de S5
 
-## S0 — AAAA-MM-JJ — Exemple d'entrée (à supprimer)
+## S1 — 2026-11-16 — Lab 0 : setup
 
-- **Pilote / copilote :** @alice / @bob
-- **Fait :** Lab 1 étapes 1 à 5 ; `dvc push` OK ; premier run MLflow dans l'expérience `scoring` (#3).
-- **Bloqué / appris :** `dvc push` refusé (identifiants absents de `.dvc/config.local`, corrigé).
-- **Prochaine étape :** Bob pilote le Lab 1 étapes 6-8 ; ouvrir l'ADR 0001 (métrique de promotion).
+- **Pilote / copilote :** @akramnemri / — (travail seul ; Khalil rejoint le binôme le 2026-11-16)
+- **Fait :** cluster kind `mlops-lab` + registry, SeaweedFS, MLflow, smoke tests MLflow et DVC ;
+  `make check-m0` 19/19 ; PR #1 fusionnée.
+- **Bloqué / appris :** pas de VM Vagrant (disque plein, Hyper-V requis par d'autres projets) :
+  WSL2 Ubuntu + Docker Desktop. `aws-lab` adapté (`host.docker.internal:8333`, sans
+  `--network host`).
+- **Prochaine étape :** Lab 1 (versioning).
 
-<!-- Vos entrées commencent ici. Modèle :
+## S2 — 2026-11-17 — Labs 1 et 2 : versioning, pipelines KFP et Airflow
 
-## S1 — AAAA-MM-JJ — Lab 0 : setup
-
-- **Pilote / copilote :**
-- **Fait :**
-- **Bloqué / appris :**
-- **Prochaine étape :**
-
--->
+- **Pilote / copilote :** @akramnemri / — (Khalil indisponible : auto-relecture des PR #2 et #3)
+- **Fait :** Lab 1 (stage DVC `download`, 22 runs MLflow, registry `@champion`, pipeline DVC,
+  Feast) et Lab 2 (image projet, pipeline KFP 6 étapes, DAG Airflow, rapport comparatif) ;
+  `make check-m1` 18/18 et `make check-m2` 18/18 sur `main`.
+- **Bloqué / appris :** WSL passé à 12 Go ; KFP et Airflow ensemble saturent le plan de
+  contrôle kind (kube-scheduler en CrashLoopBackOff) : un seul outil lourd à la fois.
+- **Prochaine étape :** tag `j0`, signaler l'indisponibilité de Khalil à l'enseignant, puis Lab 3.
